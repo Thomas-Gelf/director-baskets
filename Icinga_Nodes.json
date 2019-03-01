@@ -93,6 +93,82 @@
             "vars": {},
             "volatile": null,
             "zone": null
+        },
+        "Icinga IDO": {
+            "action_url": null,
+            "apply_for": null,
+            "assign_filter": null,
+            "check_command": "ido",
+            "check_interval": null,
+            "check_period": null,
+            "check_timeout": null,
+            "command_endpoint": null,
+            "disabled": false,
+            "display_name": null,
+            "enable_active_checks": null,
+            "enable_event_handler": null,
+            "enable_flapping": null,
+            "enable_notifications": null,
+            "enable_passive_checks": null,
+            "enable_perfdata": null,
+            "event_command": null,
+            "fields": [
+                {
+                    "datafield_id": 75,
+                    "is_required": "y",
+                    "var_filter": null
+                },
+                {
+                    "datafield_id": 79,
+                    "is_required": "n",
+                    "var_filter": null
+                },
+                {
+                    "datafield_id": 78,
+                    "is_required": "n",
+                    "var_filter": null
+                },
+                {
+                    "datafield_id": 77,
+                    "is_required": "n",
+                    "var_filter": null
+                },
+                {
+                    "datafield_id": 76,
+                    "is_required": "n",
+                    "var_filter": null
+                },
+                {
+                    "datafield_id": 74,
+                    "is_required": "y",
+                    "var_filter": null
+                }
+            ],
+            "flapping_threshold_high": null,
+            "flapping_threshold_low": null,
+            "groups": [
+                "Icinga Checks"
+            ],
+            "host": null,
+            "icon_image": null,
+            "icon_image_alt": null,
+            "imports": [],
+            "max_check_attempts": null,
+            "notes": null,
+            "notes_url": null,
+            "object_name": "Icinga IDO",
+            "object_type": "template",
+            "retry_interval": null,
+            "service_set": null,
+            "template_choice": null,
+            "use_agent": true,
+            "use_var_overrides": null,
+            "vars": {
+                "ido_name": "ido-mysql",
+                "ido_type": "IdoMysqlConnection"
+            },
+            "volatile": null,
+            "zone": null
         }
     },
     "ServiceSet": {
@@ -258,6 +334,65 @@
                     "allowed_roles": null
                 }
             ]
+        }
+    },
+    "Datafield": {
+        "75": {
+            "varname": "ido_name",
+            "caption": "IDO Connection Name",
+            "description": "The name of the IDO connection object, usually ido-mysql or ido-pqsql",
+            "datatype": "Icinga\\Module\\Director\\DataType\\DataTypeString",
+            "format": null,
+            "originalId": "75",
+            "settings": {}
+        },
+        "79": {
+            "varname": "ido_pending_queries_critical",
+            "caption": "Pending IDO Queries (critical)",
+            "description": "Critical threshold for pending queries. Applies if pending queries are higher than the threshold. Supersedes the ido_queries thresholds above.",
+            "datatype": "Icinga\\Module\\Director\\DataType\\DataTypeString",
+            "format": null,
+            "originalId": "79",
+            "settings": {}
+        },
+        "78": {
+            "varname": "ido_pending_queries_warning",
+            "caption": "Pending IDO Queries (warning)",
+            "description": "Warning threshold for pending queries. Applies if pending queries are higher than the threshold. Supersedes the ido_queries thresholds above.",
+            "datatype": "Icinga\\Module\\Director\\DataType\\DataTypeString",
+            "format": null,
+            "originalId": "78",
+            "settings": {}
+        },
+        "77": {
+            "varname": "ido_queries_critical",
+            "caption": "IDO Queries (critical)",
+            "description": "Critical threshold for queries\/s. Applies if the rate is lower than the threshold.",
+            "datatype": "Icinga\\Module\\Director\\DataType\\DataTypeString",
+            "format": null,
+            "originalId": "77",
+            "settings": {}
+        },
+        "76": {
+            "varname": "ido_queries_warning",
+            "caption": "IDO Queries (warning)",
+            "description": "Warning threshold for queries\/s. Applies if the rate is lower than the threshold.",
+            "datatype": "Icinga\\Module\\Director\\DataType\\DataTypeString",
+            "format": null,
+            "originalId": "76",
+            "settings": {}
+        },
+        "74": {
+            "varname": "ido_type",
+            "caption": "IDO Connection Type",
+            "description": null,
+            "datatype": "Icinga\\Module\\Director\\DataType\\DataTypeDatalist",
+            "format": null,
+            "originalId": "74",
+            "settings": {
+                "data_type": "string",
+                "datalist": "IDO Types"
+            }
         }
     }
 }
